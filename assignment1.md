@@ -47,9 +47,13 @@ Similarly, what's the pair with the lowest (negative) PMI? Use the same threshol
 
 Answer:
 
-The pair with the highest PMI is (are, daughter)(i.e. (daughter, are))
-The pair with the lowest PMI is (it, sake)(i.e. (sake, it))
+The pair with the highest PMI is (are, daughter)(i.e. (daughter, are)). 
+This means that the more information you know about the probability of seeing daughter having just seen are. 
+That is to say they are cooccur more frequently than would be expected with the assumption that the occurrence of two words are independent.
 
+The pair with the lowest PMI is (it, sake)(i.e. (sake, it))
+This means that the less information you know about the probability of seeing sake having just seen it. 
+That is to say they are cooccur less frequently than would be expected with the assumption that the occurrence of two words are independent.
 
 **Question 6. (6 points) What are the three words that have the highest PMI with "tears" and "death"? -threshold 10. And what are the PMI values?**
 
