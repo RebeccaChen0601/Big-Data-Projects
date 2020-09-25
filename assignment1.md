@@ -6,8 +6,8 @@ Answer:
 1. Pairs solution:
     There are two MapReduce jobs. 
     The input records are 122458.
-    The intermediate key-value pairs are 975160
-    The final output records are 6325804
+    The intermediate key-value pairs are 975160.
+    The final output records are 6325804.
     
 2. Stripes solution:
     There are two MapReduce jobs. 
