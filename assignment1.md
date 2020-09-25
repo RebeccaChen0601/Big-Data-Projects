@@ -5,9 +5,9 @@ Answer:
 
 1. Pairs solution:
     There are two MapReduce jobs. 
-    The input records are
-    The intermediate key-value pairs are 
-    The final output records are
+    The input records are 122458.
+    The intermediate key-value pairs are 975160
+    The final output records are 6325804
     
 2. Stripes solution:
     There are two MapReduce jobs. 
@@ -39,11 +39,17 @@ Answer:
 
 Answer:
 
+77198
+
+
 **Question 5. (6 points) What's the pair (x, y) (or pairs if there are ties) with the highest PMI? Use -threshold 10. 
 Similarly, what's the pair with the lowest (negative) PMI? Use the same threshold. Write a sentence or two to explain these results.**
 
 Answer:
 
+
+
 **Question 6. (6 points) What are the three words that have the highest PMI with "tears" and "death"? -threshold 10. And what are the PMI values?**
 
 Answer:
+
