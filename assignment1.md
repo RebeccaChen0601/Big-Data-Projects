@@ -53,3 +53,10 @@ Answer:
 
 Answer:
 
+**Question 7. (5 points) In the Wikipedia dataset, what are the five words that have the highest PMI with "hockey"? And how many times do these words co-occur? Use -threshold 50.**
+
+Answer：
+
+***Question 8. (5 points) Same as above, but with the word "data".***
+
+Answer:
