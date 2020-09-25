@@ -28,6 +28,8 @@ Answer:
 **Question 3. (2 points) Now disable all combiners. What is the running time of the complete pairs implementation now? 
 What is the running time of the complete stripes implementation? (Tell me where you ran these experiments, e.g., linux.student.cs.uwaterloo.ca or your own laptop.)**
 
+Answer:
+
 1. Pairs solution:
     25.674 seconds in linux.student.cs.uwaterloo.ca
     
@@ -35,7 +37,13 @@ What is the running time of the complete stripes implementation? (Tell me where 
 
 **Question 4. (3 points) How many distinct PMI pairs did you extract? Use -threshold 10.**
 
-Question 5. (6 points) What's the pair (x, y) (or pairs if there are ties) with the highest PMI? Use -threshold 10. 
-Similarly, what's the pair with the lowest (negative) PMI? Use the same threshold. Write a sentence or two to explain these results.
+Answer:
 
-Question 6. (6 points) What are the three words that have the highest PMI with "tears" and "death"? -threshold 10. And what are the PMI values?
+**Question 5. (6 points) What's the pair (x, y) (or pairs if there are ties) with the highest PMI? Use -threshold 10. 
+Similarly, what's the pair with the lowest (negative) PMI? Use the same threshold. Write a sentence or two to explain these results.**
+
+Answer:
+
+**Question 6. (6 points) What are the three words that have the highest PMI with "tears" and "death"? -threshold 10. And what are the PMI values?**
+
+Answer:
