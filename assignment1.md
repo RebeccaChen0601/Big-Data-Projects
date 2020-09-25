@@ -55,10 +55,17 @@ The pair with the lowest PMI is (it, sake)(i.e. (sake, it))
 
 Answer:
 
+The three words that have the highest PMI with "tears" are "shed", "salt", and "eyes".
+The three words that have the highest PMI with "death" are "father's", "die", and "life".
+
 **Question 7. (5 points) In the Wikipedia dataset, what are the five words that have the highest PMI with "hockey"? And how many times do these words co-occur? Use -threshold 50.**
 
 Answer：
 
+The five words that have the highest PMI with "hockey" are "defenceman", "winger", "sledge", "goaltender", and "ice".
+
 ***Question 8. (5 points) Same as above, but with the word "data".***
 
 Answer:
+
+The five words that have the highest PMI with "data" are "cooling", "encryption", "array", "storage", and "database".
