@@ -36,14 +36,13 @@ object StripesPMI extends Tokenizer {
     FileSystem.get(sc.hadoopConfiguration).delete(outputDir, true)
 
     val textFile = sc.textFile(args.input())
-    val line_count = sc.broadcast(scala.io.Source.fromFile(args.input()).getLines.size)
     val reducers = args.reducers()
 
     // Find the line count of each individual word as well as the total line
     // number
     val wordToCount = textFile
       .flatMap(line => {
-        tokenize(line).take(40).distinct
+        tokenize(line).take(40).distinct :+ "*"
       })
       .map((_, 1)) // Add base frequency 1 for each word
       .reduceByKey(_+_, reducers) // Found total count of each word
@@ -93,12 +92,11 @@ object StripesPMI extends Tokenizer {
       var wordToRatioMap = Map[String, (Double, Int)]()
       for ((k, v) <- n_to_freq) {
         if (v >= thres) {
-          wordToRatioMap += (k -> (log10(v * line_count.value / (broadcastVar.value(k) * broadcastVar.value(word)).toDouble), v))
+          // wordToRatioMap += (k -> (broadcastVar.value("*"), v))
+          wordToRatioMap += (k -> (log10(v.toDouble * broadcastVar.value("*")) - log10(broadcastVar.value(k) * broadcastVar.value(word)), v))
         }
       }
-      if (!wordToRatioMap.isEmpty ) {
-        (word, wordToRatioMap)
-      }
+      (word, wordToRatioMap)
     })
     stripespmi.saveAsTextFile(args.output())
   }

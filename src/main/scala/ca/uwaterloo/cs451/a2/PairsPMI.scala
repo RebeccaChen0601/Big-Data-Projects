@@ -34,41 +34,43 @@ object PairsPMI extends Tokenizer {
 
     val outputDir = new Path(args.output())
     FileSystem.get(sc.hadoopConfiguration).delete(outputDir, true)
-
     
     var first_sum = 0.0f
     var second_sum = 0.0f
     val threshold = sc.broadcast(args.threshold())
     val reducers = args.reducers()
     val textFile = sc.textFile(args.input())
-    val line_count = sc.broadcast(scala.io.Source.fromFile(args.input()).getLines.size)
+    val line_count = sc.broadcast(textFile.count())
     val pairsPMI = textFile
       .flatMap(line => {
         val tokens = tokenize(line).take(40).distinct
         if (tokens.length > 1){
+          // map all the non-repeated pairs and each single word 
             tokens.flatMap(firstToken => tokens.map(secondToken => (firstToken, secondToken)) ++ List((firstToken, "*")))
                   .filter(pair => pair._1 != pair._2)
         } else List()
       })
-      .map(pair => (pair, 1))
-      .reduceByKey(_ + _, reducers)
+      .map(pair => (pair, 1)) // Add base frequency 1 for each word
+      .reduceByKey(_ + _, reducers) // Found total count of each word
       .sortByKey()
       .map(pair => 
         if (pair._1._2 == "*") {
+          // count the number of appearance for the first word
             first_sum = pair._2
             ((pair._1._1, pair._1._2), (0.0f, pair._2))
         } else {
+          // switch the order of the first and second word
             ((pair._1._2, pair._1._1), (pair._2 / first_sum, pair._2))
         })
       .filter(pair => (pair._2._2 >= threshold.value))
       .sortByKey()
       .map(pair =>
         if (pair._1._2 == "*") {
+          // count the number of appearance for the second word
             second_sum = pair._2._2
             pair
         } else {
             ((pair._1._1, pair._1._2), (log10((line_count.value * pair._2._1 / second_sum).toDouble), pair._2._2))
-            // ((pair._1._1, pair._1._2), (line_count.value * pair._2._1, pair._2._2))
         })
       .filter(pair => (pair._1._2 != "*"))
     pairsPMI.saveAsTextFile(args.output())
