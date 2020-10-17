@@ -30,13 +30,13 @@ mark: 4.99/5
 
 **Test 7**
 PMI - Pair Impl on Datasci
-mark: 0.0/5
+mark: 5.0/5
 
 **Test 8**
 PMI - Stripe Impl on Datasci
-mark: 0.0/5
+mark: 5.0/5
 
 **Final grade**
-mark: 29.09/40.0
+mark: 39.09/40.0
 
-summary: 20710859,k274chen,29.09/40.0
+summary: 20710859,k274chen,39.09/40.0
