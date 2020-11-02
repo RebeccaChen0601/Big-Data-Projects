@@ -73,7 +73,7 @@ public class BuildPersonalizedPageRankRecords extends Configured implements Tool
 
             float[] pageRank = new float[sources.size()];
             for (int i = 0; i < sources.size(); i++) {
-                pageRank[i] = sources.get(i) == nid.get()?(float) StrictMath.log(1):(float) StrictMath.log(0);   ///???????
+                pageRank[i] = sources.get(i) == nid.get()?(float) StrictMath.log(1):(float) StrictMath.log(0);  
             }
             node.setPageRank(new ArrayListOfFloatsWritable(pageRank));
 
