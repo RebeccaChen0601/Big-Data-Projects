@@ -43,7 +43,6 @@ object Q7 {
         val customerMap = sc.broadcast(customerTable.collectAsMap())
         val orderTable = orderRDD
             .filter(order => (order.getString(4) < date))
-            .filter(order => customerMap.value.contains(order.getInt(1)))
             .map(order => (order.getInt(0), (order.getInt(1),
                          order.getString(4), order.getInt(7))))
         lineitemRDD
@@ -56,7 +55,7 @@ object Q7 {
                 ((customerMap.value(line._2._2.head._1), line._1, line._2._2.head._2, line._2._2.head._3),
                 line._2._1.head)
             })
-            .sortBy(_._2)
+            .sortBy(-_._2)
             .take(10)
             .foreach(tuple => println(tuple._1._1, tuple._1._2, tuple._2, tuple._1._3, tuple._1._4))
         
@@ -67,7 +66,7 @@ object Q7 {
         val customerTable = customers.map(customer => (customer.split("\\|")(0).toInt, customer.split("\\|")(1).toString))
         val customerMap = sc.broadcast(customerTable.collectAsMap())
         val orderTable = orders.filter(order => (order.split("\\|")(4) < date))
-                               .filter(order => customerMap.value.contains(order.split("\\|")(1).toInt))
+                              //  .filter(order => customerMap.value.contains(order.split("\\|")(1).toInt))
                                .map(order => (order.split("\\|")(0).toInt, (order.split("\\|")(1).toInt,
                                             order.split("\\|")(4), order.split("\\|")(7).toInt)))
         text
@@ -80,7 +79,7 @@ object Q7 {
                 ((customerMap.value(line._2._2.head._1), line._1, line._2._2.head._2, line._2._2.head._3),
                 line._2._1.head)
             })
-            .sortBy(_._2)
+            .sortBy(-_._2)
             .take(10)
             .foreach(tuple => println(tuple._1._1, tuple._1._2, tuple._2, tuple._1._3, tuple._1._4))
     }
