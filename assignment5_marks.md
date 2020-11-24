@@ -19,7 +19,7 @@ WATIAM:k274chen
 
 **Test 7** Q2 test 1 (Linux/Text) mark: 0.0/1.25
 
-**Test 8** Q2 test 2 (Linux/Parquet) mark: 0.0/1.25
+**Test 8** Q2 test 2 (Linux/Parquet) mark: 1.25/1.25
 
 **Test 9** Q2 test 2 (Linux/Text) mark: 1.25/1.25
 
@@ -31,33 +31,33 @@ WATIAM:k274chen
 
 **Test 13** Q3 test 2 (Linux/Text) mark: 0.0/1.25
 
-**Test 14** Q4 test 1 (Linux/Parquet) mark: 0.0/1.75
+**Test 14** Q4 test 1 (Linux/Parquet) mark: 1.75/1.75
 
-**Test 15** Q4 test 1 (Linux/Text mark: 0.0/1.75
+**Test 15** Q4 test 1 (Linux/Text mark: 1.75/1.75
 
-**Test 16** Q4 test 2 (Linux/Parquet) mark: 0.0/1.75
+**Test 16** Q4 test 2 (Linux/Parquet) mark: 1.75/1.75
 
-**Test 17** Q4 test 2 (Linux/Text mark: 0.0/1.75
+**Test 17** Q4 test 2 (Linux/Text mark: 1.75/1.75
 
-**Test 18** Q5 test 1 (Linux/Parquet) mark: 0.0/3.5
+**Test 18** Q5 test 1 (Linux/Parquet) mark: 3.5/3.5
 
-**Test 19** Q5 test 1 (Linux/Text) mark: 0.0/3.5
+**Test 19** Q5 test 1 (Linux/Text) mark: 3.5/3.5
 
-**Test 20** Q6 test 1 (Linux/Parquet) mark: 0.0/2
+**Test 20** Q6 test 1 (Linux/Parquet) mark: 2.0/2
 
-**Test 21** Q6 test 1 (Linux/Text) mark: 0.0/2
+**Test 21** Q6 test 1 (Linux/Text) mark: 2.0/2
 
-**Test 22** Q6 test 2 (Linux/Parquet) mark: 0.0/2
+**Test 22** Q6 test 2 (Linux/Parquet) mark: 2.0/2
 
-**Test 23** Q6 test 2 (Linux/Text) mark: 0.0/2
+**Test 23** Q6 test 2 (Linux/Text) mark: 2.0/2
 
-**Test 24** Q7 test 1 (Linux/Parquet) mark: 0.0/2
+**Test 24** Q7 test 1 (Linux/Parquet) mark: 2.0/2
 
-**Test 25** Q7 test 1 (Linux/Text) mark: 0.0/2
+**Test 25** Q7 test 1 (Linux/Text) mark: 2.0/2
 
-**Test 26** Q7 test 2 (Linux/Parquet) mark: 0.0/2
+**Test 26** Q7 test 2 (Linux/Parquet) mark: 2.0/2
 
-**Test 27** Q7 test 2 (Linux/Text) mark: 0.0/2
+**Test 27** Q7 test 2 (Linux/Text) mark: 2.0/2
 
 **Test 28** Q1 test 1 (Datasci/Parquet) mark: 1.25/1.25
 
@@ -116,6 +116,6 @@ WATIAM:k274chen
 **Feedback :** 
 
 **Final grade**
-mark: 53.75/100.0
+mark: 85.0/100.0
 
-summary: 20710859,k274chen,53.75/100.0
+summary: 20710859,k274chen,85.0/100.0
