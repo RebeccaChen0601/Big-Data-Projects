@@ -26,7 +26,7 @@ object ApplyEnsembleSpamClassifier {
         log.info("Input: " + args.input())
         log.info("Output: " + args.output())
         log.info("Model: " + args.model())
-        log.info("method: " + args.method())
+        log.info("Method: " + args.method())
 
 		val conf = new SparkConf().setAppName("ApplyEnsembleSpamClassifier")
         val sc = new SparkContext(conf)
@@ -78,11 +78,13 @@ object ApplyEnsembleSpamClassifier {
                 val bri_score = spamminess(features, bri_w.value)
                 if (method == "average") {  
                     score = (x_score + y_score + bri_score) / 3
-                } else {
-                    val x_vote = if (x_score > 0) 1 else -1
-                    val y_vote = if (y_score > 0) 1 else -1
-                    val bri_vote = if (bri_score > 0) 1 else -1
-                    score = x_vote + y_vote + bri_vote
+                } else if (method == "vote") {
+                    var count_spam = 0
+                    var count_ham = 0
+                    val x_vote = if (x_score > 0) count_spam += 1 else count_ham += 1
+                    val y_vote = if (y_score > 0) count_spam += 1 else count_ham += 1
+                    val bri_vote = if (bri_score > 0) count_spam += 1 else count_ham += 1
+                    score = count_spam - count_ham
                 }
                 val prediction = if (score > 0) "spam" else "ham"  
                 
