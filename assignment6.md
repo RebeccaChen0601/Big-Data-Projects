@@ -12,7 +12,7 @@ average: 15.03
 
 Q3:
 
-vote: 15.03
+vote: 50.87
 
 Q4:
 
